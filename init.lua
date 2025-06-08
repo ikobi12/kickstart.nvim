@@ -196,6 +196,18 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+-- Insert mode navigation
+vim.keymap.set('i', '<C-h>', '<Left>', { desc = 'Move left in insert mode' })
+vim.keymap.set('i', '<C-l>', '<Right>', { desc = 'Move right in insert mode' })
+vim.keymap.set('i', '<C-j>', '<Down>', { desc = 'Move down in insert mode' })
+vim.keymap.set('i', '<C-k>', '<Up>', { desc = 'Move up in insert mode' })
+
+vim.keymap.set('i', '<C-b>', '<C-Left>', { desc = 'Move word backward in insert mode' })
+vim.keymap.set('i', '<C-w>', '<C-Right>', { desc = 'Move word forward in insert mode' })
+
+vim.keymap.set('i', '<C-a>', '<Home>', { desc = 'Move to beginning of line' })
+vim.keymap.set('i', '<C-i>', '<End>', { desc = 'Move to end of line' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -823,7 +835,7 @@ require('lazy').setup({
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'default',
+        preset = 'enter',
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -972,7 +984,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
